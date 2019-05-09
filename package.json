@@ -1,5 +1,5 @@
 {
-  "name": "graphql-uni-app-client",
+  "name": "@kqtec/graphql-uni-app-client",
   "version": "1.0.0",
   "description": "GraphQL client for uni-app",
   "main": "index.js",
