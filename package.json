@@ -1,0 +1,25 @@
+{
+  "name": "graphql-uni-app-client",
+  "version": "1.0.0",
+  "description": "GraphQL client for uni-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kqtec/graphql-uni-app-client.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "client",
+    "for",
+    "uni-app"
+  ],
+  "author": "杨智宸",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kqtec/graphql-uni-app-client/issues"
+  },
+  "homepage": "https://github.com/kqtec/graphql-uni-app-client#readme"
+}
