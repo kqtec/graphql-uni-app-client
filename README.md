@@ -4,18 +4,19 @@ GraphQL client for uni-app
 > [GraphQL](http://graphql.cn/learn/) 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。 GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
 
 # install
+```js
 npm i kqtec/graphql-uni-app-client --save
+```
 
 # usege
 ```
 import client from graphql-uni-app-client
-import gql from 'graphql-tag'
 
 const client = new client({
   uri: 'https://api.graph.cool/simple/v1/movies'
 });
 
-const query = gql`
+const query = `
     query UserQuery {
     Movie(title: "Inception") {
       releaseDate
@@ -30,14 +31,36 @@ client.query(query).then(result => {
 });
 ```
 
+```js
+//自定义请求器
+let _transport=(function() {
+  function transport(url) {
+    if(!(instanceof transport)){
+        return new transport()
+    }
+    
+    this.$uri=url;
+  }
+  
+  transport.prototype.send=function(query,variables) {
+      return new Promise((resolve, reject) => {
+          console.log(query,variables);
+          resolve("cust send return");
+      });
+  }
+})()
+const client = new client({
+  transport: new _transport('https://api.graph.cool/simple/v1/movies')
+});
+```
+
 ## Core API
 ### Basic Querying
 Then you can invoke a simple query like this:
 (This query will get titles of all the Star Wars films)
 
 ```js
-import gql from 'graphql-tag'
-const query = gql`
+const query = `
     query UserQuery {
     Movie(title: "Inception") {
       releaseDate
@@ -58,7 +81,7 @@ You can also create fragments and use inside queries.
 Let's define a fragment for the `Film` type.
 
 ```js
-const filmInfo = gql`
+const filmInfo = `
   fragment on Film {
     title,
     director,
@@ -70,7 +93,7 @@ const filmInfo = gql`
 Let's query all the films using the above fragment:
 
 ```js
-client.query(gql`
+client.query(`
   {
     allFilms {
       films {

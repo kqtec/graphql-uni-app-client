@@ -1,0 +1,1 @@
+"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var test=function e(){_classCallCheck(this,e);var t=[];t.push({"XSRF-RAND":1234}),this.$header=t};exports.default=test;

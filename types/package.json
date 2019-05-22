@@ -1,0 +1,13 @@
+{
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "graphql-uni-app-client types",
+  "license": "Apache-2.0",
+  "name": "@types/kqtec__graphql-uni-app-client",
+  "author": "科启网络",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "typings": "index.d.ts",
+  "version": "0.1.0"
+}
